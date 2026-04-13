@@ -1,0 +1,69 @@
+// Version: 1.0.0
+type BlogId__680346545 = Nat;
+type BlogPost__72627970 =
+  {
+    content : Text;
+    excerpt : Text;
+    id : BlogId__680346545;
+    publishDate : Timestamp__301639476;
+    relatedVideoIds : [VideoId__498652803];
+    tags : [Text];
+    thumbnail : Text;
+    title : Text
+  };
+type ContactSubmission__185949536 =
+  {
+    email : Text;
+    message : Text;
+    name : Text;
+    subject : Text;
+    submittedAt : Timestamp__301639476
+  };
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type NewsletterSubscription__636257563 =
+  {email : Text; subscribedAt : Timestamp__301639476};
+type Timestamp__301639476 = Int;
+type VideoCategory__584977519 = {#Documentary; #History; #Horror; #Mystery};
+type VideoId__498652803 = Nat;
+type Video__1035008865 =
+  {
+    category : VideoCategory__584977519;
+    description : Text;
+    id : VideoId__498652803;
+    isFeatured : Bool;
+    isTrending : Bool;
+    publishDate : Timestamp__301639476;
+    thumbnail : Text;
+    title : Text;
+    viewCount : Nat;
+    youtubeId : Text
+  };
+actor {
+  stable blogPosts :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?BlogPost__72627970]];
+      var elementIndex : Nat__490723111
+    };
+  stable contactSubmissions :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?ContactSubmission__185949536]];
+      var elementIndex : Nat__490723111
+    };
+  stable var nextBlogId : Nat;
+  stable var nextVideoId : Nat;
+  stable subscriptions :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?NewsletterSubscription__636257563]];
+      var elementIndex : Nat__490723111
+    };
+  stable videos :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Video__1035008865]];
+      var elementIndex : Nat__490723111
+    }
+};

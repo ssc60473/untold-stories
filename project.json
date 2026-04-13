@@ -1,0 +1,26 @@
+{
+  "overview": "A cinematic YouTube creator portfolio website with a dark Netflix-style theme, featuring video showcases, blog, and contact page for documentary content creators.",
+  "features": [
+    "Dark cinematic hero with tagline and subscribe CTA",
+    "Featured & trending YouTube video carousels",
+    "Video grid with category filters and search",
+    "Blog with sample documentary articles",
+    "Contact form with social media links",
+    "Newsletter subscription",
+    "Mobile-first responsive design",
+    "Gold accent design with cinematic typography"
+  ],
+  "category": "portfolio",
+  "tags": [
+    "youtube",
+    "creator",
+    "documentary",
+    "cinematic",
+    "dark-theme",
+    "portfolio",
+    "hindi",
+    "mystery",
+    "history"
+  ],
+  "last_updated": "2026-04-12T21:02:49.045Z"
+}

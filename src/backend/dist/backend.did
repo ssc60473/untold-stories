@@ -1,0 +1,45 @@
+type VideoId = nat;
+type VideoCategory = 
+ variant {
+   Documentary;
+   History;
+   Horror;
+   Mystery;
+ };
+type Video = 
+ record {
+   category: VideoCategory;
+   description: text;
+   id: VideoId;
+   isFeatured: bool;
+   isTrending: bool;
+   publishDate: Timestamp;
+   thumbnail: text;
+   title: text;
+   viewCount: nat;
+   youtubeId: text;
+ };
+type Timestamp = int;
+type BlogPost = 
+ record {
+   content: text;
+   excerpt: text;
+   id: BlogId;
+   publishDate: Timestamp;
+   relatedVideoIds: vec VideoId;
+   tags: vec text;
+   thumbnail: text;
+   title: text;
+ };
+type BlogId = nat;
+service : {
+  getBlogPost: (id: BlogId) -> (opt BlogPost) query;
+  getBlogPosts: () -> (vec BlogPost) query;
+  getFeaturedVideos: () -> (vec Video) query;
+  getTrendingVideos: () -> (vec Video) query;
+  getVideos: () -> (vec Video) query;
+  getVideosByCategory: (category: VideoCategory) -> (vec Video) query;
+  submitContactForm: (name: text, email: text, subject: text, message:
+   text) -> ();
+  subscribeNewsletter: (email: text) -> (bool);
+}
